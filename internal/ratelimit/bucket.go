@@ -30,6 +30,7 @@ func (b *bucket) allow() bool {
 
 	now := time.Now()
 	elapsed := now.Sub(b.lastRefill).Seconds()
+
 	b.lastRefill = now
 
 	b.tokens += elapsed * b.refillRate
